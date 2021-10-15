@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+    <s:String x:Key="Main">Main</s:String>
+    <s:String x:Key="Catalogue">Catalogue</s:String>
+    <s:String x:Key="StoreAdd">Add object</s:String>
+    <s:String x:Key="StoreUpdate">Edit object</s:String>
+    <s:String x:Key="Support">Support</s:String>
+    <s:String x:Key="Tell us your expirience">Tell us your expirience!</s:String>
+    <s:String x:Key="EnterName">Enter your name</s:String>
+    <s:String x:Key="Enter your country">Enter your country</s:String>
+    <s:String x:Key="EnterMail">Enter your e-mail</s:String>
+    <s:String x:Key="EnterPhone">Enter your phone number</s:String>
+    <s:String x:Key="EnterComment">Enter your comment</s:String>
+    <s:String x:Key="EnterID">Enter ID</s:String>
+    <s:String x:Key="EnterInfo">Enter info</s:String>
+    <s:String x:Key="EnterDesc">Enter description</s:String>
+    <s:String x:Key="EnterRating">Enter rating</s:String>
+    <s:String x:Key="EnterPrice">Enter price</s:String>
+    <s:String x:Key="EnterPath">Enter picture path</s:String>
+    <s:String x:Key="Save">Save</s:String>
+    <s:String x:Key="ObjectName">Enter name</s:String>
+    <s:String x:Key="Cancel">Cancel</s:String>
+    <s:String x:Key="Info">Object info</s:String>
+    <s:String x:Key="Desc">Object description</s:String>
+    <s:String x:Key="Rating">Object rating</s:String>
+    <s:String x:Key="Price">Object price</s:String>
+    <s:String x:Key="Close">Close</s:String>
+    <s:String x:Key="Name">Object name</s:String>
+    <s:String x:Key="Submit">Submit</s:String>
+</ResourceDictionary>

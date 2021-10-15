@@ -1,0 +1,29 @@
+[
+  {
+    "Id": 1,
+    "Price": 100,
+    "Name": "Mouse",
+    "Description": "Gaming mouse",
+    "Information": "Information",
+    "ImagePath": "C:\\Users\\Qube\\Desktop\\Mouse.jpg",
+    "Rating": 80
+  },
+  {
+    "Id": 12,
+    "Price": 123123,
+    "Name": "Another mouse",
+    "Description": "Just cool mouse",
+    "Information": "Pro mouse",
+    "ImagePath": "C:\\Users\\Qube\\Desktop\\Mouse.jpg",
+    "Rating": 90
+  },
+  {
+    "Id": 123,
+    "Price": 120000,
+    "Name": "TV",
+    "Description": "Just TV",
+    "Information": "Samsung QLED TV",
+    "ImagePath": "C:\\Users\\Qube\\Desktop\\TV.jpg",
+    "Rating": 99
+  }
+]

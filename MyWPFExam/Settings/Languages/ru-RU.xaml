@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+    <s:String x:Key="Main">Главная</s:String>
+    <s:String x:Key="Catalogue">Каталог</s:String>
+    <s:String x:Key="StoreAdd">Добавить товар</s:String>
+    <s:String x:Key="StoreUpdate">Редактировать товар</s:String>
+    <s:String x:Key="Support">Поддержка</s:String>
+    <s:String x:Key="Tell us your expirience">Поделитесть с нами вашим впечатлением!</s:String>
+    <s:String x:Key="EnterName">Введите ваше имя</s:String>
+    <s:String x:Key="Enter your country">Укажите вашу страну</s:String>
+    <s:String x:Key="EnterMail">Укажите ваш e-mail</s:String>
+    <s:String x:Key="EnterPhone">Введите ваш номер телефона</s:String>
+    <s:String x:Key="EnterComment">Комментарий</s:String>
+    <s:String x:Key="Submit">Отправить!</s:String>
+    <s:String x:Key="EnterID">Введите ID</s:String>
+    <s:String x:Key="EnterInfo">Введите информацию</s:String>
+    <s:String x:Key="EnterDesc">Введите описание</s:String>
+    <s:String x:Key="EnterRating">Введите оценку</s:String>
+    <s:String x:Key="EnterPrice">Введите цену</s:String>
+    <s:String x:Key="EnterPath">Введите путь к картинке</s:String>
+    <s:String x:Key="Save">Сохранить</s:String>
+    <s:String x:Key="ObjectName">Введите название</s:String>
+    <s:String x:Key="Cancel">Отменить</s:String>
+    <s:String x:Key="Info">Информация о товаре</s:String>
+    <s:String x:Key="Desc">Описание товара</s:String>
+    <s:String x:Key="Rating">Рейтинг товара</s:String>
+    <s:String x:Key="Price">Цена товара</s:String>
+    <s:String x:Key="Close">Закрыть</s:String>
+    <s:String x:Key="Name">Наименование товара</s:String>
+</ResourceDictionary>

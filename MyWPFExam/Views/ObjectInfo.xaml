@@ -1,0 +1,55 @@
+﻿<Window x:Class="MyWPFExam.Views.ObjectInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyWPFExam.Views"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="ObjectInfo" Height="600" Width="500" WindowStyle="None" ResizeMode="NoResize"
+        AllowsTransparency="True"
+        Background="Transparent">
+    <md:TransitioningContent Style="{DynamicResource CardTransition}">
+        <md:Card Style="{DynamicResource MainCardStyle}">
+            <Grid>
+                <Grid x:Name="Edit" Grid.RowSpan="2" Style="{DynamicResource MenuGridStyle}" MouseDown="Edit_MouseDown">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Grid.ColumnSpan="2" Source="{Binding CurrentElectro.ImagePath}"/>
+                    <TextBlock Style="{DynamicResource TextStyle}" Grid.Row="1" Grid.Column="0" Text="ID" HorizontalAlignment="Center" FontSize="30"/>
+                    <TextBlock  Text="{Binding CurrentElectro.Id}" Grid.Row="1" Grid.Column="1" Style="{DynamicResource TextStyle}"/>
+                    <TextBlock Style="{DynamicResource TextStyle}" Grid.Row="2" Grid.Column="0" Text="{DynamicResource Name}" HorizontalAlignment="Center" FontSize="30"/>
+                    <TextBlock  Text="{Binding CurrentElectro.Name}" Grid.Row="2" Grid.Column="1" Style="{DynamicResource TextStyle}"/>
+                    <TextBlock Style="{DynamicResource TextStyle}" Grid.Row="3" Grid.Column="0" Text="{DynamicResource Info}" HorizontalAlignment="Center" FontSize="30"/>
+                    <TextBlock  Text="{Binding CurrentElectro.Information}" Grid.Row="3" Grid.Column="1" Style="{DynamicResource SupportTextStyle}"/>
+                    <TextBlock Style="{DynamicResource TextStyle}" Grid.Row="4" Grid.Column="0" Text="{DynamicResource Desc}" HorizontalAlignment="Center" FontSize="30"/>
+                    <TextBlock Text="{Binding CurrentElectro.Description}" Grid.Row="4" Grid.Column="1" Style="{DynamicResource SupportTextStyle}"/>
+                    <TextBlock Style="{DynamicResource TextStyle}" Grid.Row="5" Grid.Column="0" Text="{DynamicResource Rating}" HorizontalAlignment="Center" FontSize="30"/>
+                    <TextBlock Text="{Binding CurrentElectro.Rating}" Grid.Row="5" Grid.Column="1" Style="{DynamicResource TextStyle}"/>
+                    <TextBlock Style="{DynamicResource TextStyle}" Grid.Row="6" Grid.Column="0" Text="{DynamicResource Price}" HorizontalAlignment="Center" FontSize="30"/>
+                    <TextBlock Text="{Binding CurrentElectro.Price}" Grid.Row="6" Grid.Column="1" Style="{DynamicResource TextStyle}"/>
+                    <md:Card Style="{DynamicResource MenuCardStyle}" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Margin="10">
+                        <Button Style="{DynamicResource MainButton}" Command="{Binding CancelCommand}" >
+                            <StackPanel Orientation="Horizontal" >
+                                <md:PackIcon Kind="Close" Style="{DynamicResource IconStyle}"/>
+                                <TextBlock Text="{DynamicResource Close}" FontSize="25" Style="{DynamicResource TextStyle}"/>
+                            </StackPanel>
+                        </Button>
+                    </md:Card>
+                </Grid>
+            </Grid>
+        </md:Card>
+    </md:TransitioningContent>
+</Window>

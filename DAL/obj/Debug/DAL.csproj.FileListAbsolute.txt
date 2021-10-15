@@ -1,0 +1,11 @@
+C:\Users\Qube\Source\Repos\MyWPFExam\DAL\bin\Debug\DAL.dll
+C:\Users\Qube\Source\Repos\MyWPFExam\DAL\bin\Debug\DAL.pdb
+C:\Users\Qube\Source\Repos\MyWPFExam\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Qube\Source\Repos\MyWPFExam\DAL\obj\Debug\DAL.dll
+C:\Users\Qube\Source\Repos\MyWPFExam\DAL\obj\Debug\DAL.pdb
+C:\Users\Qube\Source\Repos\MyWPFExam\DAL\bin\Debug\AutoMapper.dll
+C:\Users\Qube\Source\Repos\MyWPFExam\DAL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Qube\Source\Repos\MyWPFExam\DAL\bin\Debug\AutoMapper.xml
+C:\Users\Qube\Source\Repos\MyWPFExam\DAL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Qube\Source\Repos\MyWPFExam\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\Qube\Source\Repos\MyWPFExam\DAL\obj\Debug\DAL.csproj.CopyComplete

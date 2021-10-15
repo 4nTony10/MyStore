@@ -1,0 +1,240 @@
+﻿<Window x:Class="MyWPFExam.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyWPFExam"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        DataContext="{Binding Source={StaticResource vmlocator}, Path=MainViewModel}"
+        mc:Ignorable="d"
+        Title="exploIT" Height="720" Width="1080" WindowStyle="None" WindowStartupLocation="CenterScreen"
+        TextElement.FontSize="14"
+        Background="Transparent"
+        AllowsTransparency="True" ResizeMode="NoResize" 
+        Icon="logo.png">
+    <md:TransitioningContent OpeningEffect="{md:TransitionEffect Kind=SlideInFromBottom, Duration=0:0:2}">
+        <md:Card Style="{DynamicResource MainCardStyle}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="36"></RowDefinition>
+                    <RowDefinition Height="*" ></RowDefinition>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="350"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Row="0" Style="{DynamicResource ToolGridStyle}" Grid.ColumnSpan="2" MouseDown="Grid_MouseDown">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="logo.png" Width="30" Height="30"/>
+                        <TextBlock Style="{DynamicResource TextStyle}" Text="ExployIT Store" FontSize="20"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Column="2" Margin="0 0 5 0" HorizontalAlignment="Right">
+                        <md:TransitioningContent Style="{DynamicResource ButtonTransition}">
+                            <Button Style="{DynamicResource SystemButton}" Click="Collapse_Click">
+                                <Button.Content>
+                                    <md:PackIcon Kind="CollapseAll" Style="{DynamicResource IconStyle}" />
+                                </Button.Content>
+                            </Button>
+                        </md:TransitioningContent>
+                        <md:TransitioningContent Style="{DynamicResource ButtonTransition}">
+                            <Button Style="{DynamicResource SystemButton}" Click="Close_Click" Command="{Binding SaveCommand}">
+                                <Button.Content>
+                                    <md:PackIcon Kind="Close" Style="{DynamicResource IconStyle}"/>
+                                </Button.Content>
+                            </Button>
+                        </md:TransitioningContent>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Style="{DynamicResource MenuGridStyle}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="350"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" x:Name="LogoImg" Style="{DynamicResource ImageStyle}"/>
+                    <Border x:Name="MainBorder" Grid.RowSpan="2" BorderBrush="#FF0AD2DC" BorderThickness="3" CornerRadius="3"/>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="45"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal" Grid.Row="0" VerticalAlignment="Center" Margin="5">
+                            <md:TransitioningContent Style="{DynamicResource IconTransition}">
+                                <md:Card Width="40" Height="30" Background="Transparent" BorderThickness="2" UniformCornerRadius="5" Margin="20 0 20 0">
+                                    <Button x:Name="ENBtn" Style="{DynamicResource MainButton}" Content="EN" Tag="en-US" Click="ChangeLan"/>
+                                </md:Card>
+                            </md:TransitioningContent>
+                            <md:TransitioningContent Style="{DynamicResource IconTransition}">
+                                <md:Card Width="40" Height="30" Background="Transparent" BorderThickness="2" UniformCornerRadius="5" Margin="20 0 20 0">
+                                    <Button x:Name="RUBtn" Style="{DynamicResource MainButton}" Content="RU" Tag="ru-RU" Click="ChangeLan"/>
+                                </md:Card>
+                            </md:TransitioningContent>
+                            <md:TransitioningContent Style="{DynamicResource IconTransition}">
+                                <md:Card Width="80" Height="30" Background="Transparent" BorderThickness="2" UniformCornerRadius="5" Margin="0 0 20 0">
+                                    <Button x:Name="LightTheme" Style="{DynamicResource MainButton}" Tag="Light" Click="ChangeTheme">
+                                        <md:PackIcon Kind="SunAdvisory" Style="{DynamicResource IconStyle}"/>
+                                    </Button>
+                                </md:Card>
+                            </md:TransitioningContent>
+                            <md:TransitioningContent Style="{DynamicResource IconTransition}">
+                                <md:Card Width="80" Height="30" Background="Transparent" BorderThickness="2" UniformCornerRadius="5" Margin="0 0 20 0">
+                                    <Button x:Name="DarkTheme" Style="{DynamicResource MainButton}" Tag="Dark" Click="ChangeTheme">
+                                        <md:PackIcon Kind="MoonAndStars" Style="{DynamicResource IconStyle}"/>
+                                    </Button>
+                                </md:Card>
+                            </md:TransitioningContent>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1">
+                            <md:TransitioningContent Style="{DynamicResource ButtonTransition}">
+                                <md:Card Style="{DynamicResource MenuCardStyle}">
+                                    <Button x:Name="MainBtn" Content="{DynamicResource Main}" Style="{DynamicResource MainButton}" Click="Main_Click"></Button>
+                                </md:Card>
+                            </md:TransitioningContent>
+                            <md:TransitioningContent Style="{DynamicResource ButtonTransition}">
+                                <md:Card Style="{DynamicResource MenuCardStyle}">
+                                    <Button x:Name="CatalogueBtn" Content="{DynamicResource Catalogue}" Style="{DynamicResource MainButton}" Click="Catalogue_Click"></Button>
+                                </md:Card>
+                            </md:TransitioningContent>
+                            <md:TransitioningContent Style="{DynamicResource ButtonTransition}">
+                                <md:Card Style="{DynamicResource MenuCardStyle}">
+                                    <Button x:Name="AddBtn" Content="{DynamicResource StoreAdd}" Style="{DynamicResource MainButton}" Click="Edit_Click" Command="{Binding AddCommand}"/>
+                                </md:Card>
+                            </md:TransitioningContent>
+                            <md:TransitioningContent Style="{DynamicResource ButtonTransition}">
+                                <md:Card Style="{DynamicResource MenuCardStyle}">
+                                    <Button x:Name="EditBtn" Content="{DynamicResource StoreUpdate}" Style="{DynamicResource MainButton}" Click="Edit_Click" Command="{Binding UpdateCommand}"/>
+                                </md:Card>
+                            </md:TransitioningContent>
+                            <md:TransitioningContent Style="{DynamicResource ButtonTransition}">
+                                <md:Card Style="{DynamicResource MenuCardStyle}">
+                                    <Button x:Name="SupportBtn" Content="{DynamicResource Support}" Style="{DynamicResource MainButton}" Click="Support_Click"></Button>
+                                </md:Card>
+                            </md:TransitioningContent>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+                <Grid x:Name="Main" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Visibility="Visible">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="1366x768_blue-and-green-triangles.jpg" Stretch="UniformToFill"/>
+                    </Grid.Background>
+                    <md:Card Background="White" UniformCornerRadius="10" Margin="55,30,55,360">
+                        <Image gif:ImageBehavior.RepeatBehavior="10x"
+                                gif:ImageBehavior.AnimatedSource="hello.gif"/>
+                    </md:Card>
+                    <md:Card Background="White" UniformCornerRadius="10" Margin="80,350,390,55">
+                        <StackPanel>
+                            <StackPanel.Background>
+                                <ImageBrush ImageSource="Backgr.jpg"/>
+                            </StackPanel.Background>
+                            <TextBlock Style="{DynamicResource TextStyle}" Text="On SALE!" FontSize="50"/>
+                            <TextBlock Style="{DynamicResource TextStyle}" Text="-70%" FontSize="50"/>
+                        </StackPanel>
+                    </md:Card>
+                    <md:Card UniformCornerRadius="10" Margin="390,350,80,55">
+                        <md:Card.Background>
+                            <ImageBrush ImageSource="Release.jpg"/>
+                        </md:Card.Background>
+                        <TextBlock Style="{DynamicResource TextStyle}" Text="New RELEASE!" FontSize="36" VerticalAlignment="Center" Foreground="White" ></TextBlock>
+                    </md:Card>
+                </Grid>
+                <Grid x:Name="Catalogue" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Visibility="Hidden">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="640"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <ListBox ItemsSource="{Binding AllElectro, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}" 
+                         ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"
+                         SelectedItem="{Binding SelectedElectro}" >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <md:TransitioningContent Style="{DynamicResource ListTransition}">
+                                    <md:Card UniformCornerRadius="10">
+                                        <StackPanel Orientation="Horizontal" Style="{DynamicResource StackPanelStyle}">
+                                            <Image Source="{Binding ImagePath}" Width="200"></Image>
+                                            <StackPanel Orientation="Vertical">
+                                                <TextBlock Style="{DynamicResource TextStyle}" Text="{Binding Name}"/>
+                                                <TextBlock Style="{DynamicResource SupportTextStyle}" Text="{Binding Description}"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Style="{DynamicResource TextStyle}" Text="{Binding Price}"/>
+                                                    <TextBlock Style="{DynamicResource TextStyle}" Text="UAH"/>
+                                                </StackPanel>
+                                                <TextBlock Text="{Binding Rating}" Style="{DynamicResource TextStyle}" HorizontalAlignment="Right" >
+                                                    <TextBlock.Foreground>
+                                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                            <GradientStop Color="#FFFFC500" Offset="0"/>
+                                                            <GradientStop Color="#FFF3FF00" Offset="1"/>
+                                                        </LinearGradientBrush>
+                                                    </TextBlock.Foreground>
+                                                </TextBlock>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </md:Card>
+                                </md:TransitioningContent>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <DockPanel Grid.Row="1">
+                        <Button DockPanel.Dock="Left" Style="{DynamicResource MainButton}" Command="{Binding RemoveCommand}" Margin="5">
+                            <md:PackIcon Kind="Minus" Style="{DynamicResource IconStyle}"/>
+                        </Button>
+                        <Button DockPanel.Dock="Right" Style="{DynamicResource MainButton}" Command="{Binding ShowCommand}" Margin="5">
+                            <md:PackIcon Kind="Eye" Style="{DynamicResource IconStyle}"/>
+                        </Button>
+                    </DockPanel>
+                </Grid>
+                <Grid x:Name="Support" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Visibility="Hidden">
+                    <Grid.Effect>
+                        <BlurEffect Radius="2"/>
+                    </Grid.Effect>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="Support.jpg"/>
+                    </Grid.Background>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"></RowDefinition>
+                        <RowDefinition Height="100"></RowDefinition>
+                        <RowDefinition Height="100"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.ColumnSpan="2" Style="{DynamicResource TextStyle}" Foreground="#FF00FFC5" Text="{DynamicResource Tell us your expirience}" FontWeight="Bold" FontSize="40" />
+                        <TextBlock Grid.Row="1" Style="{DynamicResource TextStyle}" Foreground="#FF00FFC5"  Text="{DynamicResource EnterName}" FontWeight="Bold" FontSize="30" HorizontalAlignment="Center" />
+                        <TextBlock Grid.Row="2" Style="{DynamicResource TextStyle}" Foreground="#FF00FFC5"  Text="{DynamicResource Enter your country}" FontWeight="Bold" FontSize="30" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" Background="LightGray" VerticalAlignment="Center" FontSize="20"/>
+                        <TextBox Grid.Row="2" Grid.Column="1" Background="LightGray" VerticalAlignment="Center" FontSize="20"/>
+                    </Grid>
+                    <StackPanel Grid.Row="1">
+                        <TextBlock Grid.Row="2" Style="{DynamicResource TextStyle}" Foreground="#FF00FFC5"  Text="{DynamicResource EnterMail}" FontWeight="Bold" FontSize="30" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" Background="LightGray" VerticalAlignment="Center" FontSize="20"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2">
+                        <TextBlock Grid.Row="2" Style="{DynamicResource TextStyle}" Foreground="#FF00FFC5"  Text="{DynamicResource EnterPhone}" FontWeight="Bold" FontSize="30" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" Background="LightGray" VerticalAlignment="Center" FontSize="20"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3">
+                        <TextBlock Grid.Row="2" Style="{DynamicResource TextStyle}" Foreground="#FF00FFC5"  Text="{DynamicResource EnterComment}" FontWeight="Bold" FontSize="30" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" Background="LightGray" VerticalAlignment="Center" FontSize="20" AllowDrop="True"/>
+                    </StackPanel>
+                    <Button x:Name="SubmitBtn" Grid.Row="4" Height="60" Width="160" Style="{DynamicResource MainButton}" Content="{DynamicResource Submit}" BorderBrush="Navy" BorderThickness="3" Click="SubmitBtn_Click"/>
+                </Grid>
+            </Grid>
+        </md:Card>
+    </md:TransitioningContent>
+</Window>
